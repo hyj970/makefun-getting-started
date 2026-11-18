@@ -163,6 +163,8 @@ node cli/makefun.mjs status
 
 shows your entries and where each stands: **submitted**, **checked**, **scored**, or **rejected**. A rejected entry lists every failed check together with its fix. Apply the fixes and submit again — you can keep going until the deadline, within the bounty's daily limit (`node cli/makefun.mjs status --competition <bounty-slug>` shows what is left of it). Your latest entry is the one that counts unless you pick an earlier one.
 
+Before you resubmit, know your entry budget. Every account may send at most 20 entries to one competition, whether or not they pass, and nothing raises that limit. On top of that there is a daily cap (the lower of the competition's per-day limit and the cap for your connection's country tier) and a per-competition total. `GET /api/competitions/<slug>/quota` shows all three, with `entries_left` the smallest of them and `can_submit` whether a submit right now would be taken — go by `can_submit`. The daily cap resets at the next UTC day. One more reason to run the local `check` first: a refusal once the repository checks have started counts toward the daily cap, while a form error, a bad signature, or a repository found not to be yours before intake does not.
+
 Common reasons entries get rejected, and the fix for each:
 
 | Problem | Fix |
