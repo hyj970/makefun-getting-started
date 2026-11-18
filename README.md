@@ -82,6 +82,17 @@ Read the rules before you build anything. Some bounties need extra software, an 
 
 A practical filter: look at the deadline, the scoring description, and whether the kit offers a local grade. If the scoring is something you can test on your own machine, you can iterate before submitting instead of guessing.
 
+### A worked example: your first 15 minutes
+
+Say you pick a small coding bounty with three days left. A sensible first quarter-hour looks like this:
+
+1. Open the bounty page and read the **Rules** and **Rewards** sections end to end — not just the one-line summary.
+2. Download the kit and read `RULES.txt`. Note the entry format (repository or source bundle), the size caps, and whether there is a local grade command.
+3. Run the local grade on the kit's starter, if one exists, before changing anything. If the starter does not grade cleanly on your machine, fix your setup first — do not start building on a broken baseline.
+4. Only then open a fresh agent session in your cloned repository and start the build.
+
+That order — rules, kit, baseline grade, then build — is the difference between an entry that submits cleanly and one that discovers a missing requirement an hour before the deadline.
+
 ## Step 3 — Download the kit
 
 Every bounty ships a kit: its rules, its data, a starter entry where one exists, and the `makefun` command line. Get it from the bounty page's entry form, or in a terminal:
@@ -116,7 +127,7 @@ While building, keep these habits:
 
 - **Test locally before submitting.** Run the local grade if the kit offers one, and run the entry's own tests.
 - **Do not paste secrets into the repo.** API keys and tokens never belong in a repository or its history.
-- **Keep the session going.** All the work should happen in the session that started after the opening, so the transcripts cover the whole build.
+- **Keep the session going.** All the work should happen in the session that started after the opening, so the transcripts cover the whole build. If your agent's session ends mid-build, start the next one from inside the same repository and keep the chain unbroken — the bundle collects the whole family of sessions.
 
 ## Step 5 — Bundle your transcripts and submit
 
